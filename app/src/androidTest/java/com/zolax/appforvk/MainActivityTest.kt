@@ -18,9 +18,8 @@ import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
 class MainActivityTest {
-    lateinit var myActivity: MainActivity
-    val TEST_STRING = "test@$#$(*test214"
-    val BUTTON_TEXT = "Button"
+    private val TEST_STRING = "test@$#$(*test214"
+    private val BUTTON_TEXT = "Button"
 
 
     @get:Rule
@@ -45,7 +44,7 @@ class MainActivityTest {
             .check(ViewAssertions.matches(withText("")))
     }
 
-    //Проверка того, что кнопка нажимается и на ней отображено верное название
+    //Проверка того, что кнопку видно, она нажимается и на ней отображено верное название
     @Test
     fun testButton(){
         Espresso.onView(ViewMatchers.withId(R.id.sendTextBtn))
